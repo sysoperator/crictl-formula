@@ -1,0 +1,9 @@
+{% from "crictl/map.jinja" import crictl with context %}
+
+{% set package_base_url = crictl.source_url + '/' + crictl.source_version %}
+{% set package_base_name = 'crictl-' + crictl.source_version + '-' + salt['grains.get']('kernel')|lower + '-' + salt['grains.get']('osarch') %}
+{% set package_dir = '/tmp/' + package_base_name %}
+{% set package_source = package_base_url + '/' + package_base_name + '.tar.gz' %}
+{% set package_source_hash = crictl.source_hash %}
+
+{% set crictl_bin_path = crictl.install_dir + '/crictl' %}
