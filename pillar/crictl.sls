@@ -1,6 +1,6 @@
 crictl:
   lookup:
     source_url: https://github.com/kubernetes-sigs/cri-tools/releases/download
-    source_version: v1.20.0
-    source_hash: sha256=44d5f550ef3f41f9b53155906e0229ffdbee4b19452b4df540265e29572b899c
+    source_version: v1.22.0
+    source_hash: sha256=45e0556c42616af60ebe93bf4691056338b3ea0001c0201a6a8ff8b1dbc0652a
     install_dir: /usr/local/bin
