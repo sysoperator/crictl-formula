@@ -4,6 +4,6 @@
 {% set package_base_name = 'crictl-' + crictl.source_version + '-' + salt['grains.get']('kernel')|lower + '-' + salt['grains.get']('osarch') %}
 {% set package_dir = '/tmp/' + package_base_name %}
 {% set package_source = package_base_url + '/' + package_base_name + '.tar.gz' %}
-{% set package_source_hash = crictl.source_hash %}
+{% set package_source_hash = package_source + '.sha256' %}
 
 {% set crictl_bin_path = crictl.install_dir + '/crictl' %}
