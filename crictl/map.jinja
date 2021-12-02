@@ -1,6 +1,6 @@
-{% set crictl = salt['grains.filter_by']({
+{%- set crictl = salt['grains.filter_by']({
   'Debian': {
   },
   'Ubuntu': {
   },
-}, grain='os', merge=salt['pillar.get']('crictl:lookup')) %}
+}, grain='os', merge=salt['pillar.get']('crictl:lookup')) -%}

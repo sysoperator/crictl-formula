@@ -1,9 +1,9 @@
-{% from "crictl/map.jinja" import crictl with context %}
-
-{% from "crictl/vars.jinja" import
+{%- set tplroot = tpldir.split('/')[0] -%}
+{%- from tplroot ~ "/map.jinja" import crictl with context -%}
+{%- from tplroot ~ "/vars.jinja" import
     package_dir, package_source, package_source_hash,
     crictl_bin_path
-with context %}
+with context -%}
 
 include:
   - debian/packages/ca-certificates
