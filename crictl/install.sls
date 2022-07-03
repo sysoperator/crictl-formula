@@ -31,9 +31,9 @@ crictl:
     - group: root
     - source: {{ package_dir }}/crictl
     - force: True
-{% if salt['file.file_exists'](crictl_bin_path) %}
+{%- if salt['file.file_exists'](crictl_bin_path) %}
     - onchanges:
-{% else %}
+{%- else %}
     - require:
-{% endif %}
+{%- endif %}
       - archive: crictl-download
