@@ -4,6 +4,9 @@
     package_dir, package_source, package_source_hash,
     crictl_bin_path
 with context -%}
+{%- from "common/vars.jinja" import
+    nobody_groupname
+-%}
 
 include:
   - debian/packages/ca-certificates
@@ -17,7 +20,7 @@ crictl-download:
     - enforce_toplevel: False
     - options: v
     - user: nobody
-    - group: nogroup
+    - group: {{ nobody_groupname }}
     - keep: True
     - if_missing: {{ package_dir }}
     - require:
