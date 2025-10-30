@@ -40,3 +40,13 @@ crictl:
     - require:
 {%- endif %}
       - archive: crictl-download
+
+/etc/crictl.yaml:
+  file.managed:
+    - source: salt://{{ tplroot }}/files/crictl.yaml.j2
+    - template: jinja
+    - context:
+        tpldir: {{ tpldir }}
+        tplroot: {{ tplroot }}
+    - require:
+      - file: crictl
