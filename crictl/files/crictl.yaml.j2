@@ -1,4 +1,7 @@
-runtime-endpoint: unix:///run/containerd/containerd.sock
-image-endpoint: unix:///run/containerd/containerd.sock
+{%- from "kubernetes/vars.jinja" import
+    kubelet_container_runtime_endpoint
+-%}
+runtime-endpoint: {{ kubelet_container_runtime_endpoint }}
+image-endpoint: {{ kubelet_container_runtime_endpoint }}
 timeout: 10
 debug: false
